@@ -1,0 +1,6 @@
+// Sources/CLipgloss/module.modulemap
+module CLipgloss {
+    header "lipgloss_types.h"
+    header "liblipgloss.h"
+    export *
+}
