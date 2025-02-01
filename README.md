@@ -185,6 +185,6 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 If you encounter any issues or have questions:
 
-1. Check the [Issues](YOUR_REPOSITORY_URL/issues) section
+1. Check the [Issues](https://github.com/Reonarudo/LipglossSwift/issues) section
 2. For Lipgloss-specific questions, refer to the [Lipgloss documentation](https://github.com/charmbracelet/lipgloss)
 3. Open a new issue if needed
