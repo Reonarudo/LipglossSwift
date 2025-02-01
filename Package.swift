@@ -20,11 +20,11 @@ let package = Package(
     dependencies: [],
     targets: [
         //library
-        .target(
+        .systemLibrary(
             name: "CLipgloss",
-            linkerSettings: [
-                .linkedLibrary("lipgloss"),
-                .unsafeFlags(["-Xlinker", "-L."])
+            pkgConfig: "liblipgloss",
+            providers: [
+                .brew(["liblipgloss"])
             ]
         ),
         //wrapper
@@ -36,7 +36,9 @@ let package = Package(
         //exec
         .executableTarget(
             name: "LipglossSwiftDemo",
-            dependencies: ["LipglossSwift"]),
+            dependencies: ["LipglossSwift"]
+        ),
+
         //test
         .testTarget(
             name: "LipglossSwiftTests",
