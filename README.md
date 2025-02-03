@@ -13,17 +13,68 @@ LipglossSwift brings Lipgloss's powerful terminal styling capabilities to Swift 
 - 🎭 Dark/light background adaptation
 - 🌈 Full color support (basic colors, 256 colors, truecolor)
 
-## Installation
 
-Add LipglossSwift to your Swift package dependencies:
+## **Installation**
+
+### **📦 Option 1: Install `liblipgloss` via Homebrew**
+The recommended way to install `liblipgloss` is via Homebrew:
+
+```sh
+brew tap Reonarudo/liblipgloss
+brew install liblipgloss
+```
+
+After installation, verify it works with:
+```sh
+pkg-config --libs liblipgloss
+```
+Expected output:
+```
+-L/opt/homebrew/lib -llipgloss
+```
+
+---
+
+### **📦 Option 2: Install `liblipgloss` Directly from the Repository**
+If you prefer to **build `liblipgloss` manually**, follow these steps:
+
+#### **1️⃣ Clone the Repository**
+```sh
+git clone https://github.com/Reonarudo/liblipgloss.git
+cd liblipgloss
+```
+
+#### **2️⃣ Build `liblipgloss.dylib`**
+```sh
+make
+```
+
+#### **3️⃣ Install It System-Wide**
+```sh
+sudo make install PREFIX=/usr/local
+```
+
+#### **4️⃣ Verify the Installation**
+```sh
+ls -l /usr/local/lib/liblipgloss.dylib
+pkg-config --libs liblipgloss
+```
+
+If `pkg-config` does not find `liblipgloss`, set the path manually:
+```sh
+export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig
+```
+
+---
+
+### **📦 Add `LipglossSwift` to Your Swift Package**
+Once `liblipgloss` is installed (via **Homebrew** or **manual build**), include `LipglossSwift` in your `Package.swift`:
 
 ```swift
 dependencies: [
     .package(url: "https://github.com/Reonarudo/LipglossSwift.git", from: "1.0.0")
 ]
 ```
-
-The package includes all necessary dependencies, including the Lipgloss library bindings.
 
 ## Quick Start
 
