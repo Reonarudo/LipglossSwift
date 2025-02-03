@@ -1,5 +1,7 @@
 # LipglossSwift
 
+[![Swift CI](https://github.com/Reonarudo/LipglossSwift/actions/workflows/swift.yml/badge.svg)](https://github.com/Reonarudo/LipglossSwift/actions)
+
 A Swift wrapper for [Lipgloss](https://github.com/charmbracelet/lipgloss), the elegant terminal styling library.
 
 LipglossSwift brings Lipgloss's powerful terminal styling capabilities to Swift applications, making it easy to create beautiful terminal user interfaces with style inheritance, borders, layout, and more.
