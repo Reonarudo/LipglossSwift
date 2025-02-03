@@ -1,6 +1,7 @@
 // Sources/CLipgloss/module.modulemap
-module CLipgloss {
-    header "lipgloss_types.h"
-    header "liblipgloss.h"
+module CLipgloss [system] {
+    header "/opt/homebrew/include/CLipgloss.h"
+    link "lipgloss"
     export *
 }
+
