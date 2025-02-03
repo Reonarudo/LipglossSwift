@@ -1,4 +1,4 @@
-# This workflow will build a Swift project
+# This workflow will build and test a Swift project with Homebrew installation of liblipgloss
 # For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-swift
 
 name: Swift
@@ -16,7 +16,22 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+
+    - name: Install dependencies
+      run: |
+        brew tap Reonarudo/liblipgloss
+        brew install liblipgloss
+        brew install pkg-config  # Ensure pkg-config is available
+        export PKG_CONFIG_PATH="/opt/homebrew/lib/pkgconfig:$PKG_CONFIG_PATH"
+
+    - name: Verify Installation
+      run: |
+        pkg-config --libs liblipgloss
+        ls -l /opt/homebrew/lib/liblipgloss.dylib
+        ls -l /opt/homebrew/include/
+
     - name: Build
       run: swift build -v
+
     - name: Run tests
       run: CLICOLOR_FORCE=1 swift test -v
